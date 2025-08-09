@@ -1,0 +1,28 @@
+{
+    "NiroEV": [
+        "DUMMY_NIRO_001",
+        "DUMMY_NIRO_002"
+    ],
+    "Ioniq5": [
+        "DUMMY_IONIQ5_001",
+        "DUMMY_IONIQ5_002"
+    ],
+    "Ioniq6": [
+        "DUMMY_IONIQ6_001"
+    ],
+    "KonaEV": [
+        "DUMMY_KONA_001"
+    ],
+    "EV6": [
+        "DUMMY_EV6_001"
+    ],
+    "GV60": [
+        "DUMMY_GV60_001"
+    ],
+    "Porter2EV": [
+        "DUMMY_PORTER_001"
+    ],
+    "Bongo3EV": [
+        "DUMMY_BONGO_001"
+    ]
+}

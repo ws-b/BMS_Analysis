@@ -86,3 +86,4 @@ coverage.xml
 credentials.json
 secrets.yaml
 secret_key.txt
+Source/vehicle_data.json

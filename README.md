@@ -1,3 +1,67 @@
+# 🚗 EV Data Processing Pipeline
+
+This project is a pipeline for efficiently processing and analyzing large-scale data collected from electric vehicles (EVs). Based on the data collected for each terminal, the power is calculated using physical formulas, and the data is divided into individual trips to facilitate storage and analysis.
+
+## ✨ Key Features
+
+- **Vehicle Selection**: Select a specific vehicle model or all vehicle models for processing.
+- **Data Merging**: Integrates log and GPS data distributed by terminal.
+- **Physics-based Power Calculation**: Calculates power consumption by applying the vehicle's physical parameters.
+- **Trip Data Splitting**: Automatically splits and saves the entire driving data into individual trips based on stopping time.
+- **Parallel Processing**: Reduces processing time by processing data in parallel using multiple CPU cores.
+- **Result Report Generation**: Automatically generates an Excel report summarizing the status of the processed trip data.
+
+## ⚙️ Requirements
+
+- Python 3.x
+- `tqdm` library
+
+You can install the library with the following command:
+```bash
+pip install tqdm
+```
+
+## 🚀 How to Use
+
+1. Clone or download the project.
+2. In the `Source/config.py` file, check and, if necessary, modify the path where the data is stored and other settings.
+3. In the `Source/vehicle_config.py` file, define the vehicle models and terminal ID list to be processed.
+4. Run `main.py` in the terminal.
+
+```bash
+python main.py
+```
+
+5. Follow the on-screen instructions to select the task to execute.
+    - **1: Run the entire pipeline**: Executes data loading, power calculation, and trip splitting in parallel.
+    - **2: Generate a trip creation result report**: Creates an Excel file containing statistical information of the processed trips.
+    - **0: Exit the program**
+
+## 📂 Project Structure
+
+```
+BMS_Analysis/
+│
+├── .git/
+├── Source/                 # Source code directory
+│   ├── __pycache__/
+│   ├── config.py           # Main configuration file for paths, DB info, etc.
+│   ├── data_loader.py      # Data loading and merging module
+│   ├── physics_power.py    # Physics-based power calculation module
+│   ├── report_car.py
+│   ├── report_generator.py # Result report generation module
+│   ├── trip_parser.py      # Trip data splitting and saving module
+│   ├── vehicle_config.py   # Vehicle model and terminal ID configuration file
+│   ├── vehicle_data.example.json
+│   └── vehicle_data.json
+│
+├── .gitignore
+├── main.py                 # Main program execution file
+└── README.md               # Project description file
+```
+
+---
+
 # 🚗 EV 데이터 처리 파이프라인
 
 본 프로젝트는 전기차(EV)에서 수집된 대용량 데이터를 효율적으로 처리하고 분석하기 위한 파이프라인입니다. 
@@ -49,9 +113,12 @@ BMS_Analysis/
 │   ├── config.py           # 경로, DB 정보 등 주요 설정 파일
 │   ├── data_loader.py      # 데이터 로딩 및 병합 모듈
 │   ├── physics_power.py    # 물리식 기반 전력 계산 모듈
+│   ├── report_car.py
 │   ├── report_generator.py # 결과 리포트 생성 모듈
 │   ├── trip_parser.py      # 주행(Trip) 데이터 분할 및 저장 모듈
-│   └── vehicle_config.py   # 차량 모델 및 단말기 ID 설정 파일
+│   ├── vehicle_config.py   # 차량 모델 및 단말기 ID 설정 파일
+│   ├── vehicle_data.example.json
+│   └── vehicle_data.json
 │
 ├── .gitignore
 ├── main.py                 # 프로그램 메인 실행 파일
